@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/items.dart';
+import '../pages/items.dart';
 import '../widgets/animatedMenu.dart';
 
 class EveryProject extends StatelessWidget {

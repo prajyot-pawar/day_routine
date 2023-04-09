@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/flutter_tag_view.dart';
+import '../widgets/flutter_tag_view.dart';
 
 class TagScreen extends StatefulWidget {
 

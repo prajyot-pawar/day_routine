@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/blog_screen.dart';
-import 'package:portfolio/pages/project_screen.dart';
-import 'package:portfolio/pages/tagpage.dart';
-import 'package:portfolio/widgets/animatedMenu.dart';
-import 'package:portfolio/widgets/clip_shadow_path.dart';
+import '../pages/blog_screen.dart';
+import '../pages/project_screen.dart';
+import '../pages/tagpage.dart';
+import '../widgets/animatedMenu.dart';
+import '../widgets/clip_shadow_path.dart';
 
 import '../services/dart/customClipper.dart';
 
@@ -86,42 +86,34 @@ class HomePage extends StatelessWidget {
           ),
           Positioned(
             top: 0,
-            left: 0,
+            left: 2,
             child:
             Container(
+                width: screenWidth,
+                height: screenHeight,
                 child: Stack(
                   children: [
-                    Positioned(
-                      child: ClipPath(
-                      // shadow: Shadow(
-                      //     color: Colors.black38,
-                      //     offset: Offset(4, 4),
-                      //     blurRadius: 10
-                      // ),
+                    ClipPath(
                       clipper: ShadowClipper(),
                       child: Container(
                         height: screenHeight,
-                        color: Color(0xFF726000),
+                        color: Color(0xFFCBA901),
                       ),
                     ),
-                    ),
-
                     ClipPath(
                       // shadow: Shadow(
                       //     color: Colors.black38,
                       //     offset: Offset(4, 4),
                       //     blurRadius: 10
                       // ),
-                     clipper: BigClipper(),
+                      clipper: BigClipper(),
                       child: Container(
                         height: screenHeight,
                         color: Color( 0xFFFFE459 ),
                       ),
-                  ),
+                    ),
                   ],
-                ),
-                width: screenWidth,
-                height: screenHeight
+                )
             ),
           ),
           Positioned(
@@ -148,8 +140,8 @@ class HomePage extends StatelessWidget {
               ),
           ),
           Positioned(
-              top: 0,
-              left: 0,
+              top: 10,
+              left: -10,
               width: screenWidth,
               height: screenHeight,
               child:

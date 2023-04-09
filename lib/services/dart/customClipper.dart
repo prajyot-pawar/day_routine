@@ -24,18 +24,17 @@ class ShadowClipper extends CustomClipper<Path>{
   @override
   Path getClip(Size size) {
     Path path = Path();
-    final double _xScaling = size.width / 414;
-    final double _yScaling = size.height / 896;
+    final double _xScaling = size.width / 395;
+    final double _yScaling = size.height / 890;
     path.lineTo(195.743 * _xScaling,402.332 * _yScaling);
-    path.cubicTo(113.364 * _xScaling,346.777 * _yScaling,31.2786 * _xScaling,378.665 * _yScaling,0 * _xScaling,402.332 * _yScaling,);
+    path.cubicTo(91.5 * _xScaling,329.705 * _yScaling,31.2786 * _xScaling,378.665 * _yScaling,0 * _xScaling,402.332 * _yScaling,);
     path.cubicTo(0 * _xScaling,402.332 * _yScaling,0 * _xScaling,0 * _yScaling,0 * _xScaling,0 * _yScaling,);
     path.cubicTo(0 * _xScaling,0 * _yScaling,393 * _xScaling,0 * _yScaling,393 * _xScaling,0 * _yScaling,);
     path.cubicTo(393 * _xScaling,0 * _yScaling,393 * _xScaling,402.332 * _yScaling,393 * _xScaling,402.332 * _yScaling,);
-    path.cubicTo(383.919 * _xScaling,411.396 * _yScaling,325 * _xScaling,489.5 * _yScaling,195.743 * _xScaling,402.332 * _yScaling,);
+    path.cubicTo(377.5 * _xScaling,418.5 * _yScaling,317 * _xScaling,486.813 * _yScaling,195.743 * _xScaling,402.332 * _yScaling,);
     path.cubicTo(195.743 * _xScaling,402.332 * _yScaling,195.743 * _xScaling,402.332 * _yScaling,195.743 * _xScaling,402.332 * _yScaling,);
     return path;
   }
-
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => true;
 }

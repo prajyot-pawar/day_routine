@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/items.dart';
+import '../pages/items.dart';
 import 'package:portfolio/pages/project_every_escreen.dart';
-import 'package:portfolio/widgets/animatedMenu.dart';
+import '../widgets/animatedMenu.dart';
 
 class ProjectScreen extends StatelessWidget {
   ProjectScreen({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 
-import 'package:portfolio/pages/project_screen.dart';
+import '../pages/project_screen.dart';
 
 final List<FeedItem> items = [
   FeedItem(
