@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../pages/items.dart';
 import '../widgets/animatedMenu.dart';
 
 class EveryProject extends StatelessWidget {
   //
   // const EveryProject({Key? key}) : super(key: key);
+  final String title;
+  final String description;
+  final String imgurl;
+  final String objectives;
+  final String githuburl;
+  final String techstack;
 
 
-  const EveryProject({super.key, required this.description});
+  const EveryProject({Key? key, required this.title, required this.description,required this.imgurl,required this.objectives,required this.githuburl,required this.techstack}) : super(key: key);
 
-  final FeedItem description;
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +24,15 @@ class EveryProject extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
+    Future<void> _launchURL(String url) async {
+      final Uri uri = Uri.parse(url);
+      if (!await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      )) {
+        throw "Can not launch url";
+      }
+    }
 
     return Scaffold(
       backgroundColor: Color(0xFFFFE459),
@@ -28,7 +44,7 @@ class EveryProject extends StatelessWidget {
             SizedBox(
             height: screenHeight,
             child: Padding(
-              padding: EdgeInsets.only(top: 10,left: 5,right: 5),
+              padding: EdgeInsets.only(top: 40,left: 5,right: 5,bottom: 20),
               child: Card(
                 shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 surfaceTintColor: Colors.deepPurpleAccent,
@@ -41,52 +57,193 @@ class EveryProject extends StatelessWidget {
                     ),
                   ),
 
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.all(15),
-                            child: CircleAvatar(
-                              backgroundColor: Color(0xFFEF777C), // set the background color of the icon
-                              child: Text(
-                                item.title,
-                                maxLines: 1,
-                                overflow: TextOverflow.visible,// set the text you want to display inside the icon
-                                style: TextStyle(
-                                  color: Color(0xFF3D087B), // set the color of the text
-                                  fontWeight: FontWeight.bold, // set the font weight of the text
-                                  fontSize: 25.0, // set the font size of the text
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(top: 75),
+                              margin: EdgeInsets.all(15),
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Color(0xFFEF777C), // set the background color of the icon
+                                child: Text(
+                                  '$title',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.visible,// set the text you want to display inside the icon
+                                  style: TextStyle(
+                                    color: Color(0xFF3D087B), // set the color of the text
+                                    fontWeight: FontWeight.bold, // set the font weight of the text
+                                    fontSize: 25.0, // set the font size of the text
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Text(item.title,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20,
-                                color: Color(0xFFFFE459)
+                            Container(
+                              width: screenWidth/2,
+                              padding: EdgeInsets.only(top: 50),
+                              child: Text(
+                                     '$title',
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  style: TextStyle(
+                                    fontFamily: 'Gotu',
+                                    fontStyle: FontStyle.normal,
+                                    color: Color(0xFFFFD577),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20,
+                                  ),
+                              ),
                             ),
-                          ),
-                          //   onTap: () {
-                          //     // Handle onTap event here
-                          //   },
-                        ],
-                      ),
-
-                      Padding(
-                        padding: EdgeInsets.only(left: 30, top: 0, right: 20 ,bottom: 0 ),
-                        child: Text(
-                          item.description,
-                          style: TextStyle(
-                            color: Color(0xFFF3E9C2),
-                          ),
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
+                            //   onTap: () {
+                            //     // Handle onTap event here
+                            //   },
+                          ],
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40.0, left: 40),
+                          child: Text(
+                            'Desciption :',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 22,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
 
-                    ],
+                        Padding(
+                          padding: EdgeInsets.only(left: 30, top: 20, right: 30 ,bottom: 0 ),
+                          child: Text(
+                            '$description',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 15,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+
+
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40.0, left: 40),
+                          child: Text(
+                            'Objectives :',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 22,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 30, top: 20, right: 30 ,bottom: 0 ),
+                          child: Text(
+                            '$objectives',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 15,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40.0, left: 40),
+                          child: Text(
+                            'Preview :',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 22,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.greenAccent,
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                          ),
+                            margin: EdgeInsets.only(left: 40, top: 20, right: 40 ,bottom: 20 ),
+                            child: Image.network('$imgurl',fit: BoxFit.fitHeight,)),
+
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40.0, left: 40),
+                          child: Text(
+                            'Technologies Used :',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 22,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 30, top: 20, right: 30 ,bottom: 0 ),
+                          child: Text(
+                            '$techstack',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 15,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40.0, left: 40),
+                          child: Text(
+                            'Github :',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 22,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        InkWell(
+
+                          onTap:() {
+                            String myurl='$githuburl';
+                            _launchURL(myurl);
+                          },
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.all(Radius.circular(10))
+                              ),
+                              margin: EdgeInsets.only(left: 40, top: 20, right: 40 ,bottom: 20 ),
+                              child: Image.asset('assets/images/github_logo.png',fit: BoxFit.fitHeight,height: 50,color: Colors.white,)),
+                        ),
+
+                      ],
+                    ),
                   ),
                 ),
                 // ListTile(
@@ -101,26 +258,6 @@ class EveryProject extends StatelessWidget {
               ),
             ),
           ),
-              Positioned(
-                  top: 55,
-                  left: 0,
-                  child:
-                  SizedBox(
-                    height: 50, // set an appropriate height
-                    width: 50, // set an appropriate width
-                    child: Container(
-                      width: 50,
-                      height: 50,
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFF3E9C2),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(50),
-                          bottomLeft: Radius.circular(50),
-                        ),
-                      ),
-                    ),
-                  )
-              ),
               Positioned(
                   top: 0,
                   left: 0,
@@ -171,13 +308,7 @@ class EveryProject extends StatelessWidget {
       ),
     );
   }
+
 }
 
-class FeedItem {
-  final String description;
-  final String imageUrl;
-  final String title;
-
-  FeedItem({required this.description, required this.imageUrl, required this.title});
-}
 

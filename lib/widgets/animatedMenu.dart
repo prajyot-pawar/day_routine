@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/PdfWidget.dart';
+
+import '../pages/blog_screen.dart';
+import '../pages/project_screen.dart';
 
 class ExampleStaggeredAnimations extends StatefulWidget {
   const ExampleStaggeredAnimations({
@@ -122,6 +126,8 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
+
+
   static const _menuTitles = [
     'Blogs' as String,
     'Projects',
@@ -167,8 +173,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       );
     }
 
-    final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+    final buttonStartTime = Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
     final buttonEndTime = buttonStartTime + _buttonTime;
     _buttonInterval = Interval(
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
@@ -228,6 +233,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   }
 
   List<Widget> _buildListItems() {
+    int screen;
     final listItems = <Widget>[];
     for (var i = 0; i < _menuTitles.length; ++i) {
       listItems.add(
@@ -250,11 +256,45 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
-            child: Text(
-              _menuTitles[i],
-              textAlign: TextAlign.left,
-              style: const TextStyle(
-                  color:Color(0xFF3D087B),fontSize: 25,fontFamily: 'Gotu',fontWeight: FontWeight.w500
+            child: InkWell(
+
+              onTap: () {
+                if (i == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BlogScreen()),
+                  );
+                } else if (i == 1)
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProjectScreen() ),
+                    );
+                else if (i == 2) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PdfWidget()
+                      ),
+                    );
+                } else {
+                  if (i == 3)
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BlogScreen() ),
+                    );
+                }
+
+                setState(() {
+                    screen=i;
+                }
+                );
+              },
+              child: Text(
+                _menuTitles[i],
+
+                textAlign: TextAlign.left,
+                style: const TextStyle(
+                    color:Color(0xFF3D087B),fontSize: 25,fontFamily: 'Gotu',fontWeight: FontWeight.w500
+                ),
               ),
             ),
           ),
