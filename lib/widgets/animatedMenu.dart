@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/contactme.dart';
 import 'package:portfolio/widgets/PdfWidget.dart';
 
 import '../pages/blog_screen.dart';
@@ -86,7 +87,7 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
               onPressed: _toggleDrawer,
               icon: _isDrawerOpen() || _isDrawerOpening()
                   ? const Icon(
-                Icons.clear,
+                Icons.clear_outlined,
                 color:  Colors.black,
               )
                   : const Icon(
@@ -129,8 +130,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 
   static const _menuTitles = [
-    'Blogs' as String,
     'Projects',
+    'Blogs',
     'Resume',
     'Contact me',
   ];
@@ -259,28 +260,31 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             child: InkWell(
 
               onTap: () {
-                if (i == 0) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BlogScreen()),
-                  );
-                } else if (i == 1)
+                switch (i) {
+                  case 0:
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProjectScreen() ),
+                      MaterialPageRoute(builder: (context) =>ProjectScreen() ),
                     );
-                else if (i == 2) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PdfWidget()
-                      ),
-                    );
-                } else {
-                  if (i == 3)
+                    break;
+                  case 1:
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => BlogScreen() ),
                     );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PdfWidget()),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ContactMeScreen() ),
+                    );
+                    i=0;
                 }
 
                 setState(() {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../pages/items.dart';
 import '../widgets/animatedMenu.dart';
@@ -70,7 +71,7 @@ class EveryProject extends StatelessWidget {
                               margin: EdgeInsets.all(15),
                               child: CircleAvatar(
                                 radius: 50,
-                                backgroundColor: Color(0xFFEF777C), // set the background color of the icon
+                                backgroundColor: Color(0xFFFFE459), // set the background color of the icon
                                 child: Text(
                                   '$title',
                                   maxLines: 1,
@@ -78,7 +79,7 @@ class EveryProject extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0xFF3D087B), // set the color of the text
                                     fontWeight: FontWeight.bold, // set the font weight of the text
-                                    fontSize: 25.0, // set the font size of the text
+                                    fontSize: 30.0, // set the font size of the text
                                   ),
                                 ),
                               ),
@@ -95,7 +96,7 @@ class EveryProject extends StatelessWidget {
                                     fontStyle: FontStyle.normal,
                                     color: Color(0xFFFFD577),
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 20,
+                                    fontSize: 28,
                                   ),
                               ),
                             ),
@@ -107,7 +108,7 @@ class EveryProject extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 40.0, left: 40),
                           child: Text(
-                            'Desciption :',
+                            'Description :',
                             style: TextStyle(
                               fontFamily: 'Gotu',
                               fontStyle: FontStyle.normal,
@@ -123,36 +124,6 @@ class EveryProject extends StatelessWidget {
                           padding: EdgeInsets.only(left: 30, top: 20, right: 30 ,bottom: 0 ),
                           child: Text(
                             '$description',
-                            style: TextStyle(
-                              fontFamily: 'Gotu',
-                              fontStyle: FontStyle.normal,
-                              color: Color(0xFFFFD577),
-                              fontSize: 15,
-                            ),
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-
-
-                        Padding(
-                          padding: const EdgeInsets.only(top: 40.0, left: 40),
-                          child: Text(
-                            'Objectives :',
-                            style: TextStyle(
-                              fontFamily: 'Gotu',
-                              fontStyle: FontStyle.normal,
-                              color: Color(0xFFFFD577),
-                              fontSize: 22,
-                            ),
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 30, top: 20, right: 30 ,bottom: 0 ),
-                          child: Text(
-                            '$objectives',
                             style: TextStyle(
                               fontFamily: 'Gotu',
                               fontStyle: FontStyle.normal,
@@ -188,7 +159,7 @@ class EveryProject extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 40.0, left: 40),
                           child: Text(
-                            'Technologies Used :',
+                            'Insights :',
                             style: TextStyle(
                               fontFamily: 'Gotu',
                               fontStyle: FontStyle.normal,
@@ -201,6 +172,35 @@ class EveryProject extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 30, top: 20, right: 30 ,bottom: 0 ),
+                          child: Text(
+                            '$objectives',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 15,
+                            ),
+                            // maxLines: 3,
+                            // overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(top: 40.0, left: 40),
+                          child: Text(
+                            'Technologies Used :',
+                            style: TextStyle(
+                              fontFamily: 'Gotu',
+                              fontStyle: FontStyle.normal,
+                              color: Color(0xFFFFD577),
+                              fontSize: 22,
+                            ),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 40, top: 20, right: 30 ,bottom: 0 ),
                           child: Text(
                             '$techstack',
                             style: TextStyle(
@@ -259,15 +259,21 @@ class EveryProject extends StatelessWidget {
             ),
           ),
               Positioned(
-                  top: 0,
-                  left: 0,
-                  width: screenWidth,
-                  height: screenHeight,
+                  top: screenHeight*0.08,
+                  left: screenWidth-70,
+                  // width: screenWidth,
+                  // height: screenHeight,
                   child:
-                  SizedBox(
-                    height: 200, // set an appropriate height
-                    width: 200, // set an appropriate width
-                    child: ExampleStaggeredAnimations(),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage() ),
+                      );
+                    },
+                    child: SizedBox( // set an appropriate width
+                      child: Icon(Icons.home,size: 40,color: Color(0xFFFFD577),),
+                    ),
                   )
               ),
             ],

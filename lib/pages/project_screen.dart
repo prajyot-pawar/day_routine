@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home_page.dart';
 import '../pages/items.dart';
 import 'package:portfolio/pages/project_every_escreen.dart';
 import '../widgets/NavBar.dart';
@@ -15,7 +16,7 @@ class ProjectScreen extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xFFFFE459),
+      backgroundColor: Color( 0xFFFFE459 ),
       body: Builder(
         builder: (BuildContext context){
           return Stack(
@@ -66,9 +67,9 @@ class ProjectScreen extends StatelessWidget {
                                         Container(
                                           margin: EdgeInsets.all(15),
                                           child: CircleAvatar(
-                                            backgroundColor: Color(0xFFEF777C), // set the background color of the icon
+                                            backgroundColor: Color(0xFFFFE459), // set the background color of the icon
                                             child: Text(
-                                              item.title,
+                                             item.title,
                                               maxLines: 1,
                                               overflow: TextOverflow.visible,// set the text you want to display inside the icon
                                               style: TextStyle(
@@ -130,15 +131,21 @@ class ProjectScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: 10,
-                  left: -10,
-                  width: screenWidth,
-                  height: screenHeight,
+                  top: screenHeight*0.06,
+                  left: screenWidth-70,
+                  // width: screenWidth,
+                  // height: screenHeight,
                   child:
-                  SizedBox(
-                    height: 200, // set an appropriate height
-                    width: 200, // set an appropriate width
-                    child: ExampleStaggeredAnimations(),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage() ),
+                      );
+                    },
+                    child: SizedBox( // set an appropriate width
+                      child: Icon(Icons.home,size: 40,color: Color(0xFF2B0656),),
+                    ),
                   )
               ),
               Positioned(
