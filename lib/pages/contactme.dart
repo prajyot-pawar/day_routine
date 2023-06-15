@@ -109,29 +109,7 @@ class ContactMeScreen extends StatelessWidget {
                               ),
                               child:
                               Image.network(
-                                'https://blog.waalaxy.com/wp-content/uploads/2021/01/LinkedIn-Symbole-768x432.png',
-                                width: screenWidth*0.2,
-                                height: screenWidth*0.2,
-                                fit: BoxFit.cover,
-
-                              )
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            String myurl='https://www.instagram.com/prajyotp.dev/';
-                            _launchURL(myurl);
-                          },
-                          child: Container(
-                              width: screenWidth*0.15,
-                              height: screenWidth*0.15,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(100)),
-                                color:  Color(0xFFF43B86),
-                              ),
-                              child:
-                              Image.network(
-                                'https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-instagram-new-logo-vector-download-13.png',
+                                'https://i.ibb.co/r5s9VWV/6297a2f1e01809629f113598.png',
                                 width: screenWidth*0.15,
                                 height: screenWidth*0.15,
                                 fit: BoxFit.cover,
@@ -145,18 +123,39 @@ class ContactMeScreen extends StatelessWidget {
                             _launchURL(myurl);
                           },
                           child: Container(
-                              width: screenWidth*0.15,
-                              height: screenWidth*0.15,
+                              width: screenWidth*0.11,
+                              height: screenWidth*0.11,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(100)),
                                 color:  Color(0xFFF43B86),
                               ),
                               child:
                               Image.network(
-                                'https://seeklogo.com/images/D/discord-icon-new-2021-logo-09772BF096-seeklogo.com.png',
+                                'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png',
+                                width: screenWidth*0.11,
+                                height: screenWidth*0.11,
+                                fit: BoxFit.cover,
 
-                                width: screenWidth*0.15,
-                                height: screenWidth*0.15,
+                              )
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            String myurl='https://discord.gg/xDTBM4hzwQ';
+                            _launchURL(myurl);
+                          },
+                          child: Container(
+                              width: screenWidth*0.10,
+                              height: screenWidth*0.10,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(100)),
+                                color:  Color(0xFFF43B86),
+                              ),
+                              child:
+                              Image.network(
+                                'https://i.ibb.co/GWKX1Sv/Discord-Logo-Circle.png',
+                                width: screenWidth*0.05,
+                                height: screenWidth*0.05,
                                 fit: BoxFit.contain,
 
                               )
