@@ -52,32 +52,32 @@ class HomePage extends StatelessWidget {
                         );
                       },
                   ),
-                  Container(
-                      height: screenHeight*0.75,
-                      width: screenWidth*0.5,
-                      color: Color(0xFFF43B86),
-                      alignment: Alignment.center,
-                      child:
-                      Center(
-                        child:InkWell(
-                            child:
-                            Text(
-                              'Projects',
-                              style: TextStyle(
-                              fontFamily: 'Gotu',
-                              fontStyle: FontStyle.normal,
-                              color: Color(0xFF2B0656),
-                              fontSize: 30,
-                            ),
-                        ),
-                            onTap:(){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ProjectScreen() ),
-                          );
-                        }
-                        ),
-                      )
+                  InkWell(
+                    child: Container(
+                        height: screenHeight*0.75,
+                        width: screenWidth*0.5,
+                        color: Color(0xFFF871A7),
+                        alignment: Alignment.center,
+                        child:
+                        Center(
+                          child:Text(
+                                'Projects',
+                                style: TextStyle(
+                                fontFamily: 'Gotu',
+                                fontStyle: FontStyle.normal,
+                                color: Color(0xFF2B0656),
+                                fontSize: 30,
+                              ),
+                          ),
+                        )
+                    ),
+                      onTap:(){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProjectScreen() ),
+                    );
+                  }
+
                   ),
                 ],
               ),

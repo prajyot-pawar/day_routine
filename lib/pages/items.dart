@@ -16,6 +16,14 @@ class FeedItem {
 
 final List<FeedItem> items = [
   FeedItem(
+      title:'Mahabhoomi',
+      description: 'Mahabhoomi is a web application that provides a solution for land registry system based on blockchain technology. It is developed using Flutter, Blockchain, Solidity, and Polygon Network. The project aims to provide a secure and tamper-proof system for land registration and management.',
+      imageUrl: 'https://i.ibb.co/gWMMK2f/Screenshot1.jpg',
+      objectives: ' 1. Developed a web application called Mahabhoomi which provides a solution for land registry system based on blockchain technology.\n 2. Developed a web application called Mahabhoomi which provides a solution for land registry system based on blockchain technology.\n 3.The block-chain technology ensures that the data is secure and tamper-proof, providing a robust system for land registration and management.\n 4.Implemented the smart contract in Solidity and deployed it on the Polygon network',
+      githuburl: 'https://github.com/Prajyot02/Mahabhoomi.git',
+      techstack: 'Flutter, Blockchain, Solidity, Polygon Network'
+  ),
+  FeedItem(
       title:'News Classifier Application',
       description: 'News Classfier classifies all news which are present in real-time database into the category it belongs to.',
       imageUrl: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*UmhR7X6HNsjS74Ok6HI7NA.png',
@@ -24,20 +32,12 @@ final List<FeedItem> items = [
       techstack: ' Flutter, Flask, API, Machine Learning'
   ),
   FeedItem(
-      title:'Mahabhoomi',
-      description: 'John Doe Bob Johnson John Doe Bob Johnson John Doe Bob Johnson John Doe Bob Johnson Bob Johnson',
-      imageUrl: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*UmhR7X6HNsjS74Ok6HI7NA.png',
-      objectives: ' 1. Developed a web application called Mahabhoomi which provides a solution for land registry system based on blockchain technology.\n 2. Developed a web application called Mahabhoomi which provides a solution for land registry system based on blockchain technology.\n 3.The block-chain technology ensures that the data is secure and tamper-proof, providing a robust system for land registration and management.\n 4.Implemented the smart contract in Solidity and deployed it on the Polygon network',
-      githuburl: 'https://github.com/Prajyot02/Mahabhoomi.git',
-      techstack: 'Flutter, Blockchain, Solidity, Polygon Network'
-  ),
-  FeedItem(
       title:'ChatWalk',
-      description: 'John Doe Bob Johnson John Doe Bob Johnson John Doe Bob Johnson John Doe Bob Johnson Bob Johnson',
+      description: 'ChatWalk is a real-time video and audio chat mobile application built with Flutter. It uses Firebase for back-end services and SQLite as a database for storing account information and chat logs in encrypted format. Users can authenticate their accounts with Firebase authentication.',
       imageUrl: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*UmhR7X6HNsjS74Ok6HI7NA.png',
       objectives: ' 1.Built a real-time video and audio chat mobile application based on Flutter.\n 2. Implementation of Firebase for back-end services\n 3.Implementation of SQLite as a database for storing account information and chat logs in encrypted format \n 4.Authentication of Accounts with Firebase authentication',
       githuburl: 'https://github.com/prajyot-pawar/Chatwalk.git',
-      techstack: 'Flutter, Firebase'
+      techstack: 'Flutter, Firebase, Agora'
   ),
   // FeedItem(
   //     title:'The Property Podcast',

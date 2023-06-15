@@ -16,7 +16,7 @@ class ProjectScreen extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color( 0xFFFFE459 ),
+      backgroundColor:Color(0xFFFFA2C4),
       body: Builder(
         builder: (BuildContext context){
           return Stack(
